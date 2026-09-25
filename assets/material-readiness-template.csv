@@ -1,0 +1,4 @@
+﻿工單 Job,材料與單位 Material and unit,尚未領用需求 Remaining required,現有量 On hand,其他工單保留 Reserved for other jobs,預計到貨 Expected arrival,負責人 Follow-up owner,備註 Notes
+WO-208,K-12 (pcs),35,80,60,,,虛構範例 Fictional sample - shortage 15
+WO-208,F-08 (pcs),96,120,0,,,虛構範例 Fictional sample - quantity sufficient
+WO-208,P-04 (pcs),40,42,0,,,虛構範例 Fictional sample - quantity sufficient
