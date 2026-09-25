@@ -37,3 +37,14 @@ html[lang="en"] h1{font-size:clamp(40px,4.4vw,59px);letter-spacing:-.055em;line-
 .hero-visual:before{background:radial-gradient(ellipse,#e7edf38a 0%,#f5f7f977 47%,transparent 70%)}
 .scenario-tabs button[aria-selected="true"]{color:var(--blue)}
 @media(max-width:600px){.scenario-tabs button[aria-selected="true"]{background:#eef2f6}}
+
+/* Pair the existing square logo with a readable horizontal brand name. */
+.brand{gap:12px}
+.brand-wordmark{font-size:27px;font-weight:650;letter-spacing:-.035em;color:#17324d}
+.site-footer .brand{gap:10px}
+.site-footer .brand-wordmark{font-size:23px}
+.preview-name{display:flex;flex-direction:column;gap:2px;line-height:1.25}
+.preview-name b{font-size:12px;font-weight:650;letter-spacing:-.02em;color:#17324d}
+.preview-name>span{font-size:9px;font-weight:500;color:#657487}
+@media(max-width:600px){.brand{gap:10px}.brand-wordmark{font-size:24px}.site-footer .brand-wordmark{font-size:21px}}
+@media(max-width:380px){.brand{gap:8px}.brand-logo{width:40px;height:40px}.brand-wordmark{font-size:22px}.nav-actions{gap:10px}}

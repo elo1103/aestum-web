@@ -25,7 +25,7 @@ python -m http.server 8080 --bind 127.0.0.1
 
 ## 品牌圖檔
 
-導覽列、頁尾與示意工作台沿用既有 Aestum `AES / TUM` 深藍透明版 logo。`assets/aestum-logo.png` 與 `automatter-lab-os/assets/aestum-logo-grid-rounded-frame-extra-tight-semibold-navy-knockout-transparent.png` 完全相同，未重繪、改色或變更字距。CSS 僅在顯示時略去外圍透明留白。網站主色使用與 logo 相同的 `#17324D`，避免原本鮮亮藍色與深藍標誌並列時的視覺落差。`favicon.svg` 內嵌同一份 PNG，避免依賴外部圖檔。
+導覽列、頁尾與示意工作台沿用既有 Aestum `AES / TUM` 深藍透明版 logo，圖標右側搭配正常水平排列的 `Aestum` 字標，方便辨識品牌名稱。`assets/aestum-logo.png` 與 `automatter-lab-os/assets/aestum-logo-grid-rounded-frame-extra-tight-semibold-navy-knockout-transparent.png` 完全相同，未重繪、改色或變更字距。CSS 僅在顯示時略去外圍透明留白。網站主色使用與 logo 相同的 `#17324D`，避免原本鮮亮藍色與深藍標誌並列時的視覺落差。`favicon.svg` 內嵌同一份 PNG，避免依賴外部圖檔。
 
 ## 使用邊界
 
