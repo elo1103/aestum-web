@@ -17,7 +17,7 @@
   <a class="skip-link" href="#main" data-i18n="skip">跳至主要內容</a>
   <header class="site-header">
     <div class="nav-wrap container">
-      <a class="brand" href="index.html" aria-label="Aestum 首頁"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25 16 6l11 19M10 18h12"/></svg>Aestum<span class="brand-dot">.</span></a>
+      <a class="brand" href="index.html" aria-label="Aestum 首頁" data-i18n-aria="brandHome"><span class="brand-logo"><img src="assets/aestum-logo.png" alt="Aestum" width="1024" height="1024"></span></a>
       <nav class="desktop-nav" aria-label="主要導覽" data-i18n-aria="navLabel">
         <a href="#examples" data-i18n="navExamples">應用情境</a><a href="#resources" data-i18n="navResources">免費工具</a><a href="#approach" data-i18n="navApproach">合作方式</a><a href="#about" data-i18n="navAbout">關於</a>
       </nav>
@@ -36,7 +36,7 @@
       </div>
       <div class="hero-visual" aria-label="虛構資料的製造營運示意" data-i18n-aria="heroVisualLabel">
         <div class="workspace-preview">
-          <div class="preview-top"><div class="preview-brand"><span class="mini-mark">A</span><span data-i18n="previewTitle">營運工作台</span></div><span class="sample-label" data-i18n="sampleShort">示意資料</span></div>
+          <div class="preview-top"><div class="preview-brand"><span class="mini-mark" aria-hidden="true"><img src="assets/aestum-logo.png" alt="" width="1024" height="1024"></span><span data-i18n="previewTitle">營運工作台</span></div><span class="sample-label" data-i18n="sampleShort">示意資料</span></div>
           <div class="preview-heading"><div><span class="micro-label" data-i18n="previewEyebrow">先看需要處理的事</span><h2 data-i18n="previewHeading">今天，從這裡開始。</h2></div><span class="preview-date">09:00</span></div>
           <div class="preview-metrics"><div><span data-i18n="previewMetric1">待確認事項</span><strong>03<span class="metric-dot amber"></span></strong></div><div><span data-i18n="previewMetric2">下一步負責人</span><strong>03<span class="metric-dot blue"></span></strong></div><div><span data-i18n="previewMetric3">共用的資訊</span><strong>01<span class="metric-dot green"></span></strong></div></div>
           <div class="preview-task"><span class="task-icon amber-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 17H3L12 3Z M12 9v4 M12 16v.1"/></svg></span><div><b data-i18n="previewTask1">開工前，還缺 15 個零件</b><p data-i18n="previewTask1Sub">WO-208 · 確認到貨日期</p></div><span class="pill pill-amber" data-i18n="buyer">採購</span></div>
@@ -87,7 +87,7 @@
 
     <section id="contact" class="contact-section"><div class="container contact-layout"><div><span class="eyebrow" data-i18n="contactEyebrow">讓下一步具體一點</span><h2 data-i18n="contactTitle">有一段流程，<br>值得一起聊聊嗎？</h2><p data-i18n="contactText">告訴我現在怎麼做、哪裡卡住。<br>我們可以從一次 20 分鐘的交流開始。</p><a class="contact-email" href="mailto:ester.l@aestum.co">ester.l@aestum.co <span aria-hidden="true">↗</span></a><button id="copy-email" class="copy-email" type="button" data-i18n="copyEmail">複製 Email</button><p id="copy-status" class="copy-status" role="status"></p></div><form id="contact-form" class="contact-form"><label for="contact-topic" data-i18n="topicLabel">你想聊聊哪個方向？</label><select id="contact-topic" name="topic"><option value="general" data-i18n="topicGeneral">先聊聊目前的流程</option><option value="capacity" data-i18n="capacityTab">產能與交期</option><option value="materials" data-i18n="materialsTab">材料與開工</option><option value="handoff" data-i18n="handoffTab">交接與追蹤</option><option value="ai" data-i18n="aiTab">AI 營運摘要</option></select><label for="contact-message" data-i18n="messageLabel">最近遇到的一個例子</label><textarea id="contact-message" name="message" rows="4" maxlength="1500" placeholder="例如：每次確認工單能否開工，都要再問採購一次……" data-i18n-placeholder="messagePlaceholder"></textarea><button class="button" type="submit" data-i18n="contactButton">開啟郵件草稿 <span aria-hidden="true">↗</span></button><p class="small-note" data-i18n="contactNote">將開啟你的郵件程式；內容不會透過網站送出。也可直接寄信至上方地址。</p><p id="contact-status" role="status" class="small-note"></p></form></div></section>
   </main>
-  <footer class="site-footer container"><a class="brand" href="index.html">Aestum<span class="brand-dot">.</span></a><span data-i18n="footerLine">把現場的問題，接上可行的下一步。</span><div><a href="privacy.html" data-i18n="privacyLink">隱私說明</a><span>© 2026 Aestum</span></div></footer>
+  <footer class="site-footer container"><a class="brand" href="index.html" aria-label="Aestum 首頁" data-i18n-aria="brandHome"><span class="brand-logo"><img src="assets/aestum-logo.png" alt="Aestum" width="1024" height="1024"></span></a><span data-i18n="footerLine">把現場的問題，接上可行的下一步。</span><div><a href="privacy.html" data-i18n="privacyLink">隱私說明</a><span>© 2026 Aestum</span></div></footer>
   <noscript><div class="noscript-note">JavaScript 未啟用。你仍可閱讀本頁及寄信；情境切換與線上試算需要啟用 JavaScript。 / Enable JavaScript for interactive examples and the calculator.</div></noscript>
 </body>
 </html>

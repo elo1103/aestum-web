@@ -23,6 +23,10 @@ python -m http.server 8080 --bind 127.0.0.1
 - `styles.css`：共用視覺、響應式與列印樣式。
 - `assets/material-readiness-template.csv`：含虛構資料的雙語欄位範本，無公式；可下載自行使用。
 
+## 品牌圖檔
+
+導覽列、頁尾與示意工作台沿用既有 Aestum `AES / TUM` 深藍透明版 logo。`assets/aestum-logo.png` 與 `automatter-lab-os/assets/aestum-logo-grid-rounded-frame-extra-tight-semibold-navy-knockout-transparent.png` 完全相同，未重繪、改色或變更字距。CSS 僅在顯示時略去外圍透明留白。`favicon.svg` 內嵌同一份 PNG，避免依賴外部圖檔。
+
 ## 使用邊界
 
 - 四個情境是虛構資料的示意，AI 摘要是預寫內容；不代表已部署的客戶成果。
