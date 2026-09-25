@@ -21,3 +21,19 @@ html[lang="en"] h1{font-size:clamp(40px,4.4vw,59px);letter-spacing:-.055em;line-
 
 /* Existing Aestum artwork: preserve source pixels; display the square mark with its transparent margins outside the viewport. */
 .brand{display:inline-flex;align-items:center;line-height:1;flex-shrink:0}.brand-logo{display:block;position:relative;overflow:hidden;width:54px;height:54px}.brand-logo img,.mini-mark img{display:block;position:absolute;max-width:none;width:161.5142%;height:161.5142%;left:-30.7571%;top:-30.7571%;object-fit:contain}.mini-mark{display:block;position:relative;overflow:hidden;flex-shrink:0;width:26px;height:26px;border-radius:0;background:transparent}.site-footer .brand-logo{width:46px;height:46px}@media(max-width:600px){.brand-logo{width:46px;height:46px}.site-footer .brand-logo{width:42px;height:42px}}
+
+/* Brand palette: match the existing logo navy; keep the PNG artwork unchanged. */
+:root{--blue:#17324d;--blue-dark:#244b70;--soft-blue:#edf2f7}
+.button:hover{box-shadow:0 5px 16px #17324d1a}
+.blue{background:#557a9d}
+.blue-icon{background:#edf2f7;color:#456f94}
+.pill-blue{background:#eef3f7;color:#365c7e}
+.chart-track>span{background:#84a2bd}
+.tool-preview-top svg{stroke:#567b9b;fill:#f4f7fa}
+.free-tag,.round-arrow{background:#edf2f7}
+.contact-email{color:#244b70}
+.contact-section{background:#eff3f7;border-color:#e2e8ee}
+.resource-section{background:#f5f7f9}
+.hero-visual:before{background:radial-gradient(ellipse,#e7edf38a 0%,#f5f7f977 47%,transparent 70%)}
+.scenario-tabs button[aria-selected="true"]{color:var(--blue)}
+@media(max-width:600px){.scenario-tabs button[aria-selected="true"]{background:#eef2f6}}
