@@ -103,7 +103,7 @@ try{
   await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape'});
   assert.equal(await evaluate(`document.querySelector('#mobile-nav').hidden`),true);
   await click('.lang-toggle');assert.equal(await evaluate('document.documentElement.lang'),'en');
-  assert.match(await evaluate(`document.querySelector('.hero-actions a[href*="material-check"]').getAttribute('href')`),/lang=en/);
+  assert.match(await evaluate(`document.querySelector('a.tool-preview[href*="material-check"]').getAttribute('href')`),/lang=en/);
   await viewport(1440,1050);await screenshot('home-english.png');
   console.log('PASS: scenario navigation, keyboard tabs, mobile menu, language switch, email draft encoding.');
   await navigate(`${origin}/material-check.html?lang=zh`,'Aestum');
