@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Aestum — 串起製造現場與辦公室作業</title>
+  <meta property="og:title" content="Aestum — 串起製造現場與辦公室作業">
+  <meta property="og:description" content="製造業流程改善・AI 應用・自動化整合。從一個實際例子開始，先聊 20 分鐘。">
+  <meta property="og:url" content="https://aestum.co/">
+  <meta property="og:image" content="https://aestum.co/assets/og-image.png">
+  <link rel="canonical" href="https://aestum.co/">
+  <link rel="icon" href="../assets/favicon.svg?v=2d648e" type="image/svg+xml">
+  <!-- Flyer QR entry point: counted as its own path, then forwarded to the homepage. -->
+  <meta http-equiv="refresh" content="3;url=/">
+  <script>
+    (() => {
+      const analyticsToken = '4b527262fcf54f418057d03f8b2c0d25';
+      if (analyticsToken && location.hostname === 'aestum.co') {
+        const beacon = document.createElement('script');
+        beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        beacon.dataset.cfBeacon = JSON.stringify({token: analyticsToken});
+        document.head.append(beacon);
+      }
+      addEventListener('load', () => setTimeout(() => location.replace(location.hostname === 'aestum.co' ? '/' : '../index.html'), 600));
+    })();
+  </script>
+  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:#172331;background:#fff}a{color:#2d648e}</style>
+</head>
+<body>
+  <p>正在前往 Aestum… <a href="/">立即前往</a></p>
+</body>
+</html>

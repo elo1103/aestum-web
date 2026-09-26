@@ -36,7 +36,8 @@ python -m http.server 8080 --bind 127.0.0.1
 - 數量以每列相同單位計算，最多 6 位小數、單值上限十億。保留量僅指其他工單的保留；超過現有量時需核對，不能直接當作可用量。
 - 到貨日期不增加現有量；數量足夠不代表品質、規格或開工條件已確認。
 - CSV 匯出為留存快照，不支援重新匯入；文字欄位有基本試算表公式注入防護。
-- 主要聯絡管道為 LINE 官方帳號（`https://lin.ee/pBzPYhs`；桌機版顯示 `assets/line-qr.svg`，手機版只顯示按鈕）。聯絡表單開啟 `mailto:` 草稿，不會代替使用者寄信。未加入分析追蹤、登入、購物車、金流或後端。
+- 主要聯絡管道為 LINE 官方帳號（`https://lin.ee/pBzPYhs`；桌機版顯示 `assets/line-qr.svg`，手機版只顯示按鈕）。聯絡表單開啟 `mailto:` 草稿，不會代替使用者寄信。聯絡表單收在「想先用 Email 描述你的例子？」展開區。僅在 `aestum.co` 正式網域載入 Cloudflare Web Analytics（無 cookie，token 寫在 `site.js` 與 `fcu/index.html`）；未加入登入、購物車、金流或後端。
+- `fcu/index.html`：逢甲交流會 flyer 的 QR 入口（`https://aestum.co/fcu`），記一次瀏覽後轉到首頁，用來計算掃碼人數。
 
 ## 驗證
 
