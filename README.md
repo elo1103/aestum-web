@@ -16,7 +16,7 @@ python -m http.server 8080 --bind 127.0.0.1
 
 ## 內容
 
-- `index.html`：中英文首頁、四個應用情境、免費工具、合作方式、經歷與聯絡。
+- `index.html`：中英文首頁、四個應用情境、服務內容（沿用 flyer 背面）、免費工具、合作方式、經歷與聯絡。
 - `material-check.html` / `material-check.js`：單一工單備料檢查，支援輸入驗證、CSV 匯出與列印。
 - `privacy.html`：目前網站實際資料處理方式。
 - `site.js`：語言、導覽、情境頁籤、聯絡郵件草稿。
@@ -36,7 +36,7 @@ python -m http.server 8080 --bind 127.0.0.1
 - 數量以每列相同單位計算，最多 6 位小數、單值上限十億。保留量僅指其他工單的保留；超過現有量時需核對，不能直接當作可用量。
 - 到貨日期不增加現有量；數量足夠不代表品質、規格或開工條件已確認。
 - CSV 匯出為留存快照，不支援重新匯入；文字欄位有基本試算表公式注入防護。
-- 聯絡表單開啟 `mailto:` 草稿，不會代替使用者寄信。未加入分析追蹤、登入、購物車、金流或後端。
+- 主要聯絡管道為 LINE 官方帳號（`https://lin.ee/pBzPYhs`；桌機版顯示 `assets/line-qr.svg`，手機版只顯示按鈕）。聯絡表單開啟 `mailto:` 草稿，不會代替使用者寄信。未加入分析追蹤、登入、購物車、金流或後端。
 
 ## 驗證
 
@@ -50,6 +50,6 @@ node scripts/check.mjs
 
 ## 發布
 
-目前為本機可預覽版本，尚未部署到公開網址。可部署至支援靜態 HTML 的網站代管服務；正式上線前確認網址、對外文案、聯絡信箱，以及免費資源的發放安排。不要將測試用 HTTP server 暴露到網際網路。
+以 GitHub Pages 發布至 `https://aestum.co`（`CNAME`）；DNS 在 Namecheap，只新增 GitHub Pages 的 A／CNAME 記錄，不動 Microsoft 365 郵件用的 MX／TXT。`assets/og-image.png` 為 LINE／社群分享預覽圖。10/7 逢甲交流會 flyer 的 QR code 指向本站。可部署至支援靜態 HTML 的網站代管服務；正式上線前確認網址、對外文案、聯絡信箱，以及免費資源的發放安排。不要將測試用 HTTP server 暴露到網際網路。
 
 個人網站 `ELO_web` 另行維護，未被此專案修改。

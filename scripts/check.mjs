@@ -146,7 +146,7 @@ try{
   console.log('PASS: shortage math, decimals, invalid inputs, arrival semantics, data retention on language switch, reset confirmation, empty state, real CSV download and formula escaping.');
   // Opening the HTML directly must also work, without a development server.
   await navigate(`${pathToFileURL(path.join(root,'index.html'))}?lang=zh`,'Aestum');
-  assert.equal(await text('h1'),'資訊到位。工作，往前一步。');
+  assert.equal(await text('h1'),'串起現場與辦公室，工作往前一步。');
   await navigate(`${pathToFileURL(path.join(root,'material-check.html'))}?lang=zh`,'Aestum');
   assert.equal(await text('#shortage-count'),'1');
   await call('Emulation.setEmulatedMedia',{media:'print'});
