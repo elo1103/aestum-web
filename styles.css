@@ -39,7 +39,7 @@ html[lang="en"] h1{font-size:clamp(40px,4.4vw,59px);letter-spacing:-.055em;line-
 
 /* Pair the existing square logo with a readable horizontal brand name. */
 .brand{gap:12px}
-.brand-wordmark{font-size:27px;font-weight:650;letter-spacing:-.035em;color:var(--brand-blue)}
+.brand-wordmark{font-size:27px;font-weight:650;letter-spacing:-.035em;color:var(--brand-blue)}.brand-text{display:flex;flex-direction:column;gap:6px}.brand-tagline{font-size:12px;font-weight:500;letter-spacing:.06em;color:#5b6878}.brand-tagline:empty{display:none}
 .site-footer .brand{gap:10px}
 .site-footer .brand-wordmark{font-size:23px}
 .preview-name{display:flex;flex-direction:column;gap:2px;line-height:1.25}
