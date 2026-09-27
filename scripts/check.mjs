@@ -11,7 +11,7 @@ import {createServer} from 'node:http';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const temp=await mkdtemp(path.join(tmpdir(),'aestum-web-qa-'));
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.csv':'text/csv; charset=utf-8'};
-const pages=['index.html','material-check.html','privacy.html'];
+const pages=['index.html','privacy.html'];
 for(const page of pages){
   const html=await readFile(path.join(root,page),'utf8');
   const ids=Array.from(html.matchAll(/\bid="([^"]+)"/g),match=>match[1]);
@@ -82,7 +82,7 @@ try{
       }
     }
   }
-  console.log('PASS: local links, language coverage, three pages in both languages at five widths.');
+  console.log('PASS: local links, language coverage, both pages in both languages at five widths.');
   await navigate(`${origin}/index.html?lang=zh`,'Aestum');
   await viewport(1440,1050);
   await screenshot('home-desktop.png');await screenshot('home-full.png',true);
@@ -103,54 +103,14 @@ try{
   await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape'});
   assert.equal(await evaluate(`document.querySelector('#mobile-nav').hidden`),true);
   await click('.lang-toggle');assert.equal(await evaluate('document.documentElement.lang'),'en');
-  assert.match(await evaluate(`document.querySelector('a.tool-preview[href*="material-check"]').getAttribute('href')`),/lang=en/);
+  assert.match(await evaluate(`document.querySelector('.site-footer a[href^="privacy.html"]').getAttribute('href')`),/lang=en/);
   await viewport(1440,1050);await screenshot('home-english.png');
   console.log('PASS: scenario navigation, keyboard tabs, mobile menu, language switch, email draft encoding.');
-  await navigate(`${origin}/material-check.html?lang=zh`,'Aestum');
-  assert.equal(await text('#shortage-count'),'1');assert.match(await text('.row-status'),/缺 15/);
-  await screenshot('tool-desktop.png');
-  await viewport(390,844);await screenshot('tool-mobile.png');await noOverflow('tool table on mobile');
-  await viewport(1440,1050);
-  await change('#material-rows tr:first-child [data-field="stock"]','95');assert.equal(await text('#shortage-count'),'0');
-  await change('#material-rows tr:first-child [data-field="reserved"]','100');assert.equal(await text('#invalid-count'),'1');assert.match(await text('.row-status'),/保留量超過/);
-  await change('#material-rows tr:first-child [data-field="reserved"]','60');
-  await change('#material-rows tr:first-child [data-field="required"]','-1');assert.equal(await text('#invalid-count'),'1');
-  await change('#material-rows tr:first-child [data-field="required"]','');assert.equal(await text('#invalid-count'),'1');
-  await change('#material-rows tr:first-child [data-field="required"]','35');
-  await change('#material-rows tr:first-child [data-field="stock"]','80');
-  await change('#needed-date','2026-10-08');await change('#material-rows tr:first-child [data-field="arrival"]','2026-10-10');
-  assert.match(await text('.row-status'),/到貨晚於/);assert.equal(await text('#shortage-count'),'1');
-  await change('#material-rows tr:first-child [data-field="arrival"]','2026-10-07');
-  assert.match(await text('.row-status'),/尚未計入庫存/);assert.equal(await text('#shortage-count'),'1');
-  const fractional=await evaluate(`AestumMaterial.calculate({name:'test',required:'0.3',stock:'0.4',reserved:'0.1',arrival:''})`);
-  assert.equal(fractional.shortage,0);assert.equal(fractional.available,0.3);
-  assert.equal(await evaluate(`AestumMaterial.quantity('Infinity')`),null);
-  assert.equal(await evaluate(`AestumMaterial.quantity('0.0000001')`),null);
-  assert.equal(await evaluate(`AestumMaterial.validDate('2026-02-30')`),false);
-  assert.equal(await evaluate(`AestumMaterial.validDate('2028-02-29')`),true);
-  await change('#material-rows tr:first-child [data-field="name"]','=1+1');await change('#job-name','@SUM(A1)');
-  await click('#export-csv');
-  let csv;
-  for(let i=0;i<100;i++){try{csv=await readFile(path.join(temp,'aestum-material-readiness.csv'),'utf8');break;}catch{await sleep(50);}}
-  assert(csv,'CSV download did not finish');assert(csv.startsWith('\uFEFF'));assert(csv.includes('"\'=1+1"'));assert(csv.includes('"\'@SUM(A1)"'));assert(csv.includes('"15"'));
-  await evaluate(`window.confirm=()=>false`);await click('#load-sample');assert.equal(await evaluate('document.querySelector("#job-name").value'),'@SUM(A1)');
-  await evaluate(`window.confirm=()=>true`);await click('#load-sample');assert.equal(await evaluate('document.querySelector("#job-name").value'),'WO-208');
-  await change('#material-rows tr:first-child [data-field="name"]','Custom <img src=x onerror=alert(1)>');
-  await click('.lang-toggle');assert.equal(await evaluate('document.documentElement.lang'),'en');assert.equal(await evaluate('document.querySelector("#material-rows input").value'),'Custom <img src=x onerror=alert(1)>');assert.match(await text('.row-status'),/15 short/);
-  await click('.lang-toggle');assert.match(await text('.row-status'),/缺 15/);
-  await click('#add-row');assert.equal(await text('#total-count'),'4');assert.equal(await text('#invalid-count'),'1');
-  await evaluate(`Array.from(document.querySelectorAll('.remove-row')).forEach(el=>el.click())`);
-  assert.equal(await text('#total-count'),'0');assert.equal(await evaluate('document.getElementById("export-csv").disabled'),true);
-  await click('#add-row');assert.equal(await text('#total-count'),'1');
-  await click('#load-sample');assert.equal(await text('#shortage-count'),'1');
-  console.log('PASS: shortage math, decimals, invalid inputs, arrival semantics, data retention on language switch, reset confirmation, empty state, real CSV download and formula escaping.');
   // Opening the HTML directly must also work, without a development server.
   await navigate(`${pathToFileURL(path.join(root,'index.html'))}?lang=zh`,'Aestum');
   assert.equal(await text('h1'),'串起現場與辦公室，工作往前一步。');
-  await navigate(`${pathToFileURL(path.join(root,'material-check.html'))}?lang=zh`,'Aestum');
-  assert.equal(await text('#shortage-count'),'1');
   await call('Emulation.setEmulatedMedia',{media:'print'});
-  await viewport(1000,1000);await screenshot('tool-print.png',true);
+  await viewport(1000,1000);await screenshot('home-print.png',true);
   await call('Emulation.setEmulatedMedia',{media:''});
   assert.deepEqual(errors,[],'Browser runtime exceptions');assert.deepEqual(networkFailures,[],'Missing network resources');
   console.log('PASS: direct-file preview, print layout, no browser exceptions or missing resources.');

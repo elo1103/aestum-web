@@ -4,7 +4,7 @@ Aestum 品牌網站第一版。純 HTML、CSS 與 JavaScript，無套件安裝�
 
 ## 本機預覽
 
-Windows 可雙擊 `open-preview.cmd`；或直接用瀏覽器開啟 `index.html`，包括情境切換與備料試算。
+Windows 可雙擊 `open-preview.cmd`；或直接用瀏覽器開啟 `index.html`，包括情境切換。
 
 也可在本資料夾執行：
 
@@ -16,12 +16,10 @@ python -m http.server 8080 --bind 127.0.0.1
 
 ## 內容
 
-- `index.html`：中英文首頁、四個應用情境、服務內容（沿用 flyer 背面）、免費工具、合作方式、經歷與聯絡。
-- `material-check.html` / `material-check.js`：單一工單備料檢查，支援輸入驗證、CSV 匯出與列印。
+- `index.html`：中英文首頁、四個應用情境、服務內容（沿用 flyer 背面）、合作方式、經歷與聯絡。
 - `privacy.html`：目前網站實際資料處理方式。
 - `site.js`：語言、導覽、情境頁籤、聯絡郵件草稿。
 - `styles.css`：共用視覺、響應式與列印樣式。
-- `assets/material-readiness-template.csv`：含虛構資料的雙語欄位範本，無公式；可下載自行使用。
 
 ## 品牌圖檔
 
@@ -32,10 +30,6 @@ python -m http.server 8080 --bind 127.0.0.1
 ## 使用邊界
 
 - 四個情境是虛構資料的示意，AI 摘要是預寫內容；不代表已部署的客戶成果。
-- 免費工具不串接庫存或 ERP。資料僅留在目前頁面的記憶體，重新整理即清除。
-- 數量以每列相同單位計算，最多 6 位小數、單值上限十億。保留量僅指其他工單的保留；超過現有量時需核對，不能直接當作可用量。
-- 到貨日期不增加現有量；數量足夠不代表品質、規格或開工條件已確認。
-- CSV 匯出為留存快照，不支援重新匯入；文字欄位有基本試算表公式注入防護。
 - 主要聯絡管道為 LINE 官方帳號（`https://lin.ee/pBzPYhs`；桌機版顯示 `assets/line-qr.svg`，手機版只顯示按鈕）。聯絡表單開啟 `mailto:` 草稿，不會代替使用者寄信。聯絡表單收在「想先用 Email 描述你的例子？」展開區。僅在 `aestum.co` 正式網域載入 Cloudflare Web Analytics（無 cookie，token 寫在 `site.js` 與 `fcu/index.html`）；未加入登入、購物車、金流或後端。
 - `fcu/index.html`：逢甲交流會 flyer 的 QR 入口（`https://aestum.co/fcu`），記一次瀏覽後轉到首頁，用來計算掃碼人數。
 
@@ -47,10 +41,12 @@ python -m http.server 8080 --bind 127.0.0.1
 node scripts/check.mjs
 ```
 
-檢查本機連結、雙語、桌機與行動版溢出、頁籤鍵盤操作、郵件草稿、備料計算、無效輸入、到貨狀態、CSV 實際下載、切換語言後資料保留與直接開 HTML。截圖與測試下載寫入系統暫存目錄。
+檢查本機連結、雙語、桌機與行動版溢出、頁籤鍵盤操作、郵件草稿、列印版面與直接開 HTML。截圖與測試下載寫入系統暫存目錄。
 
 ## 發布
 
 以 GitHub Pages 發布至 `https://aestum.co`（`CNAME`）；DNS 在 Namecheap，只新增 GitHub Pages 的 A／CNAME 記錄，不動 Microsoft 365 郵件用的 MX／TXT。`assets/og-image.png` 為 LINE／社群分享預覽圖。10/7 逢甲交流會 flyer 的 QR code 指向本站。可部署至支援靜態 HTML 的網站代管服務；正式上線前確認網址、對外文案、聯絡信箱，以及免費資源的發放安排。不要將測試用 HTTP server 暴露到網際網路。
 
 個人網站 `ELO_web` 另行維護，未被此專案修改。
+
+備料檢查工具（`material-check.html`）已於 2026-09-26 移除：功能不如廠商自有的 Excel，與網站的自動化定位不符。需要時可從 git 歷史取回。
