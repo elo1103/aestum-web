@@ -25,7 +25,7 @@ python -m http.server 8080 --bind 127.0.0.1
 
 導覽列、頁尾與示意工作台使用既有 `AES / TUM` 圖形，右側搭配水平排列的 `Aestum` 字標。依使用者要求，網站主色、字標、logo 與 favicon 統一為較明亮的中深藍 `#2D648E`，按鈕 hover 為 `#245375`；內文字色維持 `#172331`。
 
-`assets/aestum-logo.png` 保留原始名片用深藍 `#17324D` 圖檔，與 `automatter-lab-os/assets/aestum-logo-grid-rounded-frame-extra-tight-semibold-navy-knockout-transparent.png` 完全相同。網站使用 `assets/aestum-logo-web.svg`：內嵌原 PNG，以 SVG 色彩濾鏡套用網站藍色，保留原始輪廓、字距與透明度。`favicon.svg` 使用相同處理。SVG viewBox 略去外圍透明留白，圖形沒有重繪。
+`assets/aestum-logo.png` 保留原始名片用深藍 `#17324D` 圖檔，與 `aestum-os/assets/aestum-logo-grid-rounded-frame-extra-tight-semibold-navy-knockout-transparent.png` 完全相同。網站使用 `assets/aestum-logo-web.svg`：內嵌原 PNG，以 SVG 色彩濾鏡套用網站藍色，保留原始輪廓、字距與透明度。`favicon.svg` 使用相同處理。SVG viewBox 略去外圍透明留白，圖形沒有重繪。
 
 ## 使用邊界
 
